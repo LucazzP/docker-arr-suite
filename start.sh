@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.bashrc
+
 # Check if has necessary variables set
 if [ -z "$NFS_VOLUME" ]; then
     echo "NFS_VOLUME is not set"
@@ -20,6 +22,7 @@ fi
 mkdir -p "${NFS_VOLUME}/docker_data/bittorrent"
 mkdir -p "${NFS_VOLUME}/docker_data/gluetun"
 mkdir -p "${NFS_VOLUME}/docker_data/jellyfin"
+mkdir -p "${NFS_VOLUME}/docker_data/jellyfin_cache"
 mkdir -p "${NFS_VOLUME}/docker_data/jellyseerr"
 mkdir -p "${NFS_VOLUME}/docker_data/letsencrypt"
 mkdir -p "${NFS_VOLUME}/docker_data/overseerr"
