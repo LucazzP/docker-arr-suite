@@ -40,6 +40,8 @@ services:
       - media:/media
     devices:
       - /dev/dri:/dev/dri
+    env:
+      - PLEX_CLAIM=claim-z78Y_8pzQFxYK79iR-Dj
     healthcheck:
       test: curl -f http://localhost:32400/identity || exit 1
       interval: 10s
