@@ -81,8 +81,8 @@ services:
 include:
   - bittorrent-compose.yml
   - arr-compose.yml
-#  - plex-compose.yml
-#  - jellyfin-compose.yml
+  - plex-compose.yml
+  - jellyfin-compose.yml
 
 networks:
   default:
@@ -94,13 +94,11 @@ volumes:
   letsencrypt: # Traefik Lets Encrypt certs.
     driver: local
     driver_opts:
-      type: "nfs"
-      o: "addr=${NFS_SERVER},rw,tcp,nolock,hard,wsize=65536,rsize=65536"
+      type: bind
       device: ":${NFS_VOLUME}/docker_data/letsencrypt"
 
   gluetun: # Gluetun app data.
     driver: local
     driver_opts:
-      type: "nfs"
-      o: "addr=${NFS_SERVER},rw,tcp,nolock,hard,wsize=65536,rsize=65536"
+      type: bind
       device: ":${NFS_VOLUME}/docker_data/gluetun"
