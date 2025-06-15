@@ -67,17 +67,20 @@ volumes:
   media: # Media library
     driver: local
     driver_opts:
-      type: bind
+      type: none
+      o: bind
       device: "${NFS_VOLUME}/data/media"
 
   overseerr: # Overseerr app data.
     driver: local
     driver_opts:
-      type: bind
+      type: none
+      o: bind
       device: "${NFS_VOLUME}/docker_data/overseerr"
 
   plex: # Plex app data.
     driver: local
     driver_opts:
-      type: bind
+      type: none
+      o: bind
       device: "${NFS_VOLUME}/docker_data/plex"
