@@ -32,6 +32,12 @@ services:
     env_file: ./env/gluetun.env
     volumes:
       - gluetun:/gluetun
+    sysctls:
+      - net.ipv6.conf.all.disable_ipv6=1
+      - net.ipv4.conf.all.src_valid_mark=1
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
 
   watchtower:
     # See more: https://github.com/containrrr/watchtower
