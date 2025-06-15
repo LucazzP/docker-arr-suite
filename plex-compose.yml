@@ -38,6 +38,8 @@ services:
     volumes:
       - plex:/config
       - media:/media
+    devices:
+      - /dev/dri:/dev/dri
     healthcheck:
       test: curl -f http://localhost:32400/identity || exit 1
       interval: 10s
