@@ -138,28 +138,28 @@ volumes:
     driver: local
     driver_opts:
       type: bind
-      device: ":${NFS_VOLUME}/data"
+      device: "${NFS_VOLUME}/data"
 
   sonarr: # Sonarr app data.
     driver: local
     driver_opts:
       type: bind
-      device: ":${NFS_VOLUME}/docker_data/sonarr"
+      device: "${NFS_VOLUME}/docker_data/sonarr"
 
   radarr: # Radarr app data.
     driver: local
     driver_opts:
       type: bind
-      device: ":${NFS_VOLUME}/docker_data/radarr"
+      device: "${NFS_VOLUME}/docker_data/radarr"
 
   prowlarr: # Prowlarr app data.
     driver: local
     driver_opts:
       type: bind
-      device: ":${NFS_VOLUME}/docker_data/prowlarr"
+      device: "${NFS_VOLUME}/docker_data/prowlarr"
 
   unpackerr: # unPackerr app data.
     driver: local
     driver_opts:
       type: bind
-      device: ":${NFS_VOLUME}/docker_data/unpackerr"
+      device: "${NFS_VOLUME}/docker_data/unpackerr"
