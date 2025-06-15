@@ -13,6 +13,8 @@ services:
     container_name: sonarr
     restart: always
     # network_mode: service:gluetun
+    ports:
+      - "8989:8989"
     env_file: ./env/arr.env
     volumes:
       - sonarr:/config
@@ -37,6 +39,8 @@ services:
     container_name: radarr
     restart: always
     # network_mode: service:gluetun
+    ports:
+      - "7878:7878"
     env_file: ./env/arr.env
     volumes:
       - radarr:/config
@@ -60,6 +64,8 @@ services:
     container_name: prowlarr
     restart: always
     # network_mode: service:gluetun
+    ports:
+      - "9696:9696"
     env_file: ./env/arr.env
     volumes: 
       - prowlarr:/config
