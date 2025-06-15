@@ -66,6 +66,7 @@ services:
     secrets:
       - openvpn_user
       - openvpn_password
+      - openvpn_config
     env_file: ./env/gluetun.env
     volumes:
       - gluetun:/gluetun
