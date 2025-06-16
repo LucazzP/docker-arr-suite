@@ -31,12 +31,13 @@ mkdir -p "${NFS_VOLUME}/docker_data/prowlarr"
 mkdir -p "${NFS_VOLUME}/docker_data/radarr"
 mkdir -p "${NFS_VOLUME}/docker_data/sonarr"
 mkdir -p "${NFS_VOLUME}/docker_data/unpackerr"
+mkdir -p "${NFS_VOLUME}/docker_data/bazarr"
 
 # create folders for media
 mkdir -p "${NFS_VOLUME}/data/media/movies"
 mkdir -p "${NFS_VOLUME}/data/media/tv"
 mkdir -p "${NFS_VOLUME}/data/torrents/movies"
-mkdir -p "${NFS_VOLUME}/data/torrents/torrent_data"
+mkdir -p "${NFS_VOLUME}/data/torrents/downloads"
 mkdir -p "${NFS_VOLUME}/data/torrents/tv"
 
 docker compose up -d

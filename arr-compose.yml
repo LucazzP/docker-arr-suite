@@ -108,6 +108,26 @@ services:
       radarr:
         condition: service_healthy
         restart: true
+  
+  bazarr:
+    image: linuxserver/bazarr:latest
+    container_name: bazarr
+    env_file: ./env/arr.env
+    volumes:
+      - data:/media
+      - bazarr:/config
+    ports:
+      - 6767:6767
+    depends_on:
+      gluetun:
+        condition: service_healthy
+        restart: true
+      bittorrent:
+        condition: service_healthy
+        restart: true
+      plex:
+        condition: service_healthy
+        restart: true
 
 networks:
   default:
@@ -150,3 +170,10 @@ volumes:
       type: none
       o: bind
       device: "${NFS_VOLUME}/docker_data/unpackerr"
+
+  bazarr: # Bazarr app data.
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "${NFS_VOLUME}/docker_data/bazarr"
